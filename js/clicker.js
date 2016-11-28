@@ -1,19 +1,21 @@
 scoreID = document.querySelector("#score p");
 multiplicatorID = document.querySelector("#multiplicator p");
 autoclicID = document.querySelector("#autoclic p");
+//superbID =document.query.Selector("#superb p");
 buttonClic = document.querySelector("#buttonClic");
 buttonMult = document.querySelector("#buttonMult");
 buttonAutoclic = document.querySelector("#buttonAutoclic");
-clicID = document.querySelector("#clic p");
-buttonClic2 = document.querySelector("#buttonClic2");
+//buttonsuperb = document.querySelector("#buttonsuperb");
+
 
 // Default values
 score = 0;
 countMultiplicator = 1;
 countAutoclic = 0;
+//countsuperb = 0;
 priceMultiplicator = 10;
 priceAutoclic = 20;
-clic = 0;
+//pricesuperb = 100;
 
 //show
 function showScore() {
@@ -30,9 +32,10 @@ function showAutoclic() {
 	buttonAutoclic.innerHTML = "Autoclic x" + countAutoclic;
 }
 
-function showClic() {
-    clicID.innerHTML = "clic: " + totalscore;
-}
+/*function showsuperb() {
+	superbID.innerHTML = "next superb price" + pricesuperb;
+	buttonsuperb.innerHTML = "superb x" + countsuperb;
+}*/
 
 //
 function incrementScore() {
@@ -46,10 +49,10 @@ function autoclicScore() {
 	showScore() ;
 }
 
-function incrementClic() {
-    clic += countClic;
-    showClic();
-}
+/*function superbScore() {
+ 	score += countsuperb;
+ 	showScore() ;
+ }*/
 
 //
 function incrementMultiplicator() {
@@ -61,7 +64,7 @@ function incrementMultiplicator() {
 		showMultiplicator();
 	}
 	else {
-		alert("You more point " + priceMultiplicator);
+		alert("You need more point " + priceMultiplicator);
 	}	
 }
 
@@ -80,21 +83,41 @@ function incrementAutoclic() {
 		showAutoclic();
 	}
 	else {
-		alert("You need at least " + priceAutoclic);
+		alert("You need more point " + priceAutoclic);
 	}	
 }
 
 function autoclicPrice() {
-	priceAutoclic *= 2;
+	pricesuperb *= 2;
+}
+/*
+function incrementsuperb() {
+	if (score >= pricesuperb) {
+		score -= pricesuperb;
+		countsuperb += 100;
+		superbPrice();
+		showScore();
+		showsuperb();
+	}
+	else {
+		alert("You need more point " + pricesuperb);
+	}	
 }
 
+function superbPrice() {
+	pricesuperb *= 2;
+}
+*/
 
 
 
-setInterval(autoclicScore, 500) ;
+setInterval(autoclicScore, 1000) ;
+//setInterval(superbScore, 1000);
 showScore();
 showMultiplicator();
 showAutoclic();
+//showsuperb();
 buttonClic.onclick = incrementScore;
 buttonMult.onclick = incrementMultiplicator;
 buttonAutoclic.onclick = incrementAutoclic;
+//buttonsuperb.onclick = incrementsuperb;
