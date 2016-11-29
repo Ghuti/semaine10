@@ -88,7 +88,7 @@ function incrementAutoclic() {
 }
 
 function autoclicPrice() {
-	pricesuperb *= 2;
+	priceAutoclic *= 2;
 }
 /*
 function incrementsuperb() {
